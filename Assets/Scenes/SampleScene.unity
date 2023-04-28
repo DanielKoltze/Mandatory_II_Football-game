@@ -470,6 +470,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1849884195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7880258905548709822, guid: a7159cdba1d464cbfbb5467d62744c79, type: 3}
+  m_PrefabInstance: {fileID: 1768841952763232495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1849884200
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849884195}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1849884201
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849884195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2066243776
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +654,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066243776}
   m_CullTransparentMesh: 1
+--- !u!1 &2088083453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4136619135927739735, guid: d70585177098543c9a0fdaa224d1668d, type: 3}
+  m_PrefabInstance: {fileID: 2691348966955056009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2088083454 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7202695833398307338, guid: d70585177098543c9a0fdaa224d1668d, type: 3}
+  m_PrefabInstance: {fileID: 2691348966955056009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2088083458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088083453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edc3eaf1d57f46c0bf8b9bedf85e699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 2088083459}
+  moveSpeed: 3
+  transformer: {fileID: 2088083454}
+--- !u!143 &2088083459
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088083453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.0000001
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1768841952763232495
 PrefabInstance:
   m_ObjectHideFlags: 0
