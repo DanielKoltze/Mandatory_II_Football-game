@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -402,6 +402,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1401907846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7178491393602875169, guid: d70585177098543c9a0fdaa224d1668d, type: 3}
+  m_PrefabInstance: {fileID: 2691348966955056009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1511017524
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,9 +681,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edc3eaf1d57f46c0bf8b9bedf85e699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 1401907846}
+  modelTrans: {fileID: 2088083454}
   characterController: {fileID: 2088083459}
-  moveSpeed: 3
-  transformer: {fileID: 2088083454}
+  movespeed: 18
+  timeToMaxSpeed: 0.26
+  timeToLoseMaxSpeed: 0.2
+  reverseMomentumMultiplier: 2.2
+  respawnWaitTime: 2
 --- !u!143 &2088083459
 CharacterController:
   m_ObjectHideFlags: 0
