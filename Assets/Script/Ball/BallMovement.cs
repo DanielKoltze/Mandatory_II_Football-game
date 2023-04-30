@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
+    public int forceMultiplier = 5;
+    public int startSpeed = 350;
     public Rigidbody ballBody;
     public AudioClip audioClip;
     private AudioSource audioSource;
@@ -14,19 +16,19 @@ public class BallMovement : MonoBehaviour
         audioSource.clip = audioClip;
     }
 
-    void OnTriggerEnter(Collider other) {
+    private void OnCollisionEnter(Collision other) {
         if (other.gameObject.layer == 8) {
-            Player player = other.GetComponent<Player>();
-            int magnitude = 1000;
+            int magnitude = startSpeed;
             var force = transform.position - other.transform.position;
-            if (Input.GetKey(KeyCode.F)) {
+
+            if (Input.GetKey(KeyCode.Space)) {
                 audioSource.Play();
-                magnitude = magnitude * 2;
+                magnitude = magnitude * forceMultiplier;
               }
             force.Normalize();
             ballBody.AddForce(force * magnitude);
         }
-
-        
     }
+
+
 }

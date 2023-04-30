@@ -141,8 +141,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y != 1.5f) {
+             transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+        }
         Movement();
     }
+
+    private void OnCollisionExit(Collision other) {
+            Debug.Log("Exit collision");
+        }
 
     
 }
