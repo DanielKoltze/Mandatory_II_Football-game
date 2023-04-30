@@ -7,14 +7,7 @@ public class BallMovement : MonoBehaviour
     public int forceMultiplier = 5;
     public int startSpeed = 350;
     public Rigidbody ballBody;
-    public AudioClip audioClip;
-    private AudioSource audioSource;
-
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = audioClip;
-    }
+    public AudioSource onKick;
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.layer == 8) {
@@ -22,7 +15,7 @@ public class BallMovement : MonoBehaviour
             var force = transform.position - other.transform.position;
 
             if (Input.GetKey(KeyCode.Space)) {
-                audioSource.Play();
+                onKick.Play();
                 magnitude = magnitude * forceMultiplier;
               }
             force.Normalize();
