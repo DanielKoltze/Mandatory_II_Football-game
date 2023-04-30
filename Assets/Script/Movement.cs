@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public CharacterController characterController;
-    public float moveSpeed = 3.0f; 
+    public float moveSpeed = 3.0f;
     private Vector3 movement = Vector3.zero;
     public Transform transformer;
 
@@ -20,22 +20,19 @@ public class Movement : MonoBehaviour
         {
             movement = -transformer.forward * moveSpeed;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             movement = transformer.forward * moveSpeed;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             movement = transformer.right * moveSpeed;
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             movement = -transformer.right * moveSpeed;
         }
-        else
-        {
-            movement = Vector3.zero;
-        }
+        
         characterController.Move(movement * Time.deltaTime);
     }
 }
