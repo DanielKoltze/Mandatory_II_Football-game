@@ -12,19 +12,20 @@ public class PlayMenu : MonoBehaviour
     public GameObject levelThreeField;
     public void LoadLevel(string levelName)
     {
+        /*
         if(levelName == "Level1" ||
             levelName == "Level2" && levelOneCleared ||
             levelName == "Level3" && levelTwoCleared)
         {
             SceneManager.LoadScene(levelName);
         }
-        
-        
+        */
+        SceneManager.LoadScene(levelName);
     }
     private void Start()
     {
-        levelTwoField.SetActive(levelOneCleared);
-        levelThreeField.SetActive(levelTwoCleared);
+        //levelTwoField.SetActive(levelOneCleared);
+        //levelThreeField.SetActive(levelTwoCleared);
     }
 
 }
