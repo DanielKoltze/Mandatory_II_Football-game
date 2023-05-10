@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DetectGoal : MonoBehaviour
 {
-    public Player player;
+    public GameObject player;
     public AudioSource onGoal;
  
 private void OnTriggerEnter(Collider other) {
@@ -12,6 +12,8 @@ private void OnTriggerEnter(Collider other) {
         onGoal.Play();
         ResetBall ball = other.GetComponent<ResetBall>();
         ball.resetBall();
+        Player playerScript = player.GetComponent<Player>();
+        playerScript.Die();
 
     }
 } 

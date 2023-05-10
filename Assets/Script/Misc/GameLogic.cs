@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
+    public AudioSource onLevelStart; 
 
     private void Start()
     {
-       
+       onLevelStart.Play();    
     }
 
     void Update()

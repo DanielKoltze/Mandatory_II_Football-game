@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    //References
     [Header("References")]
-    public Transform trans;
     public Transform modelTrans;
     public CharacterController characterController;
 
@@ -38,7 +34,6 @@ public class Player : MonoBehaviour
 
     private Vector3 movementVelocity = Vector3.zero;
 
-    // Death and respawning
     [Header("Death and Respawning")]
     [Tooltip("How long after the player's death, in seconds, before they are respawned")]
     public float respawnWaitTime = 2f;
@@ -50,7 +45,7 @@ public class Player : MonoBehaviour
     private Quaternion spawnRotation;
     void Start()
     {
-        spawnPoint = trans.position;
+        spawnPoint = modelTrans.position;
         spawnRotation = modelTrans.rotation;
         
     }
@@ -131,25 +126,18 @@ public class Player : MonoBehaviour
     public void Respawn() {
         dead = false;
         modelTrans.rotation = spawnRotation;
-        trans.position = spawnPoint;
+        modelTrans.position = spawnPoint;
         
         enabled = true;
         characterController.enabled = true;
         modelTrans.gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (transform.position.y != 1.5f) {
              transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
         }
         Movement();
-    }
-
-    private void OnCollisionExit(Collision other) {
-            Debug.Log("Exit collision");
-        }
-
-    
+    } 
 }
